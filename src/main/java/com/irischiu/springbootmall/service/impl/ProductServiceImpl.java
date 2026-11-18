@@ -1,12 +1,12 @@
 package com.irischiu.springbootmall.service.impl;
 
 import com.irischiu.springbootmall.dao.ProductDao;
+import com.irischiu.springbootmall.dto.ProductQueryParams;
 import com.irischiu.springbootmall.dto.ProductRequest;
 import com.irischiu.springbootmall.model.Product;
 import com.irischiu.springbootmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.irischiu.springbootmall.constant.ProductCategory;
 import java.util.List;
 
 @Component
@@ -16,8 +16,8 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> getProducts(ProductCategory category, String search) {
-        return productDao.getProducts(category, search);
+    public List<Product> getProducts(ProductQueryParams productQueryParams) {
+        return productDao.getProducts(productQueryParams);
     }
 
     @Override
